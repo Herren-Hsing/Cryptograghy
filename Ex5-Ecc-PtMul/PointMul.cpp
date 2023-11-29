@@ -145,20 +145,15 @@ Point mulPoint(Point pt, long long n)
 		return pt;
 	}
 	long long i = 0;
-	Point pp = pt;
 	while (n != 0)
 	{
-		if (i == 0)
+		if (i)
 		{
-			pp = pt;
-		}
-		else
-		{
-			pp = addPoint(pp, pp);
+			pt = addPoint(pt, pt);
 		}
 		if (n & 1)
 		{
-			res = addPoint(res, pp);
+			res = addPoint(res, pt);
 		}
 		n >>= 1;
 		i++;
